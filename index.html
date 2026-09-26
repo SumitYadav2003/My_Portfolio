@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sumit Yadav — Software Engineer</title>
+<meta name="description" content="Sumit Yadav — Full-stack developer building AI-integrated web applications. MSc Advanced Computer Science, University of Leicester.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="grain"></div>
+<div class="scroll-progress" id="scrollProgress"></div>
+<div class="cursor-dot" id="cursorDot"></div>
+
+<!-- ============ NAV ============ -->
+<header class="nav">
+  <a href="#top" class="nav-mark">SY</a>
+  <nav class="nav-links">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#journey">Journey</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark and light mode">
+    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19.1v2.4M4.2 4.2l1.7 1.7M18.1 18.1l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.2 19.8l1.7-1.7M18.1 5.9l1.7-1.7"/></svg>
+    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.8 6.8 0 0 0 10.5 10.5z"/></svg>
+  </button>
+  <button class="nav-burger" id="navBurger" aria-label="Open menu"><span></span><span></span><span></span></button>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="hero-grid"></div>
+  <div class="hero-inner">
+    <div class="hero-text">
+      <p class="hero-badge"><span class="badge-dot"></span> Open to Graduate Software &amp; Data Engineer roles</p>
+      <p class="hero-greeting">Hello, I'm</p>
+      <h1 class="hero-name">Sumit <span class="accent">Yadav</span></h1>
+      <p class="hero-role">Software Engineer &middot; Data Engineer</p>
+      <p class="hero-edu">MSc Advanced Computer Science <span class="hero-edu-status">(in progress)</span></p>
+      <p class="hero-edu">University of Leicester</p>
+      <p class="hero-loc">Leicester, UK &middot; Open to relocate</p>
+
+      <div class="hero-stats" id="heroStats">
+        <div class="stat-box">
+          <span class="stat-num" data-count="2">0</span>
+          <span class="stat-label">Full-stack projects shipped</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-static">MSc</span>
+          <span class="stat-label">Advanced CS &mdash; in progress</span>
+        </div>
+      </div>
+
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary">View Projects</a>
+        <a href="files/Sumit-Yadav-CV.pdf" class="btn btn-ghost" download>Download CV</a>
+        <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+      </div>
+
+      <div class="hero-social">
+        <a href="https://github.com/SumitYadav2003" target="_blank" rel="noopener" class="social-btn" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor"><path d="M12 .5C5.73.5.98 5.24.98 11.52c0 5.02 3.26 9.28 7.78 10.78.57.1.78-.25.78-.55 0-.27-.01-1.16-.02-2.1-3.17.69-3.84-1.35-3.84-1.35-.52-1.31-1.26-1.66-1.26-1.66-1.03-.7.08-.69.08-.69 1.14.08 1.74 1.17 1.74 1.17 1.01 1.73 2.65 1.23 3.3.94.1-.74.4-1.23.72-1.51-2.53-.29-5.19-1.27-5.19-5.63 0-1.24.44-2.26 1.17-3.06-.12-.29-.51-1.45.11-3.02 0 0 .96-.31 3.15 1.17a10.9 10.9 0 0 1 5.74 0c2.19-1.48 3.15-1.17 3.15-1.17.62 1.57.23 2.73.11 3.02.73.8 1.17 1.82 1.17 3.06 0 4.37-2.66 5.34-5.2 5.62.41.36.77 1.06.77 2.15 0 1.55-.01 2.8-.01 3.18 0 .3.2.66.79.55 4.52-1.51 7.77-5.76 7.77-10.78C23.02 5.24 18.27.5 12 .5Z"/></svg>
+          GitHub
+        </a>
+        <a href="https://www.linkedin.com/in/yadavsumit2003/" target="_blank" rel="noopener" class="social-btn" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45Z"/></svg>
+          LinkedIn
+        </a>
+        <a href="mailto:sumityadav8976502030@gmail.com" class="social-btn" aria-label="Email">
+          <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+          Email
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-photo-wrap">
+      <div class="hero-photo" id="heroPhoto">
+        <img src="images/profile.png" alt="Portrait of Sumit Yadav">
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-cue"><span></span></div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="section" id="about">
+  <div class="section-inner about-grid">
+    <div class="about-copy">
+      <h2 class="section-title">About</h2>
+      <p>I'm an MSc Advanced Computer Science student at the University of Leicester, finishing up a dissertation that treats generative AI as a component to be controlled, not a black box to be trusted. That instinct runs through everything I build: generate with AI where it's useful, then wrap it in validation, ownership, and evidence so the software stays predictable.</p>
+      <p>Before this, I built Carverse, a 125-page car dealership platform, solo, in plain PHP with no framework, during my BSc. I've since deployed CulinaAI to production with a real CI/CD pipeline and AWS S3 storage, and I'm currently deepening system design and DSA fundamentals while I look for my first role as a Software or Data Engineer.</p>
+      <p>Based in Leicester, UK &mdash; open to relocating anywhere the work is good.</p>
+    </div>
+
+    <div class="terminal" id="terminal">
+      <div class="terminal-bar">
+        <span class="terminal-dot dot-r"></span><span class="terminal-dot dot-y"></span><span class="terminal-dot dot-g"></span>
+        <span class="terminal-title">sumit@portfolio &mdash; zsh</span>
+      </div>
+      <div class="terminal-body" id="terminalBody"></div>
+    </div>
+  </div>
+
+  <div class="section-inner">
+    <div class="highlights-box reveal-target">
+      <h3 class="highlights-title">Highlights</h3>
+      <div class="highlights-grid">
+        <span class="hl">Two full-stack projects, solo-built end to end</span>
+        <span class="hl">Custom AI validation &amp; safety logic, not just API calls</span>
+        <span class="hl">Deployed to production with a real CI/CD pipeline</span>
+        <span class="hl">Comfortable across the full stack</span>
+        <span class="hl">MSc-level software engineering</span>
+        <span class="hl">Actively upskilling: System Design, DSA</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SKILLS ============ -->
+<section class="section section-alt" id="skills">
+  <div class="section-inner">
+    <h2 class="section-title">Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-group reveal-target">
+        <h3>Languages</h3>
+        <div class="chips">
+          <span class="chip">Python</span>
+          <span class="chip">SQL</span>
+          <span class="chip">JavaScript</span>
+          <span class="chip">HTML / CSS</span>
+        </div>
+      </div>
+      <div class="skill-group reveal-target">
+        <h3>Backend &amp; Data</h3>
+        <div class="chips">
+          <span class="chip">Django</span>
+          <span class="chip">PostgreSQL</span>
+          <span class="chip">MySQL</span>
+          <span class="chip">REST APIs</span>
+        </div>
+      </div>
+      <div class="skill-group reveal-target">
+        <h3>AI Integration</h3>
+        <div class="chips">
+          <span class="chip">OpenAI API</span>
+          <span class="chip">GPT-4 Vision</span>
+        </div>
+      </div>
+      <div class="skill-group reveal-target">
+        <h3>Cloud &amp; DevOps</h3>
+        <div class="chips">
+          <span class="chip">AWS S3</span>
+          <span class="chip">AWS IAM</span>
+          <span class="chip">GitHub Actions</span>
+          <span class="chip">CI/CD</span>
+          <span class="chip">Render</span>
+          <span class="chip">Docker</span>
+        </div>
+      </div>
+      <div class="skill-group reveal-target">
+        <h3>Testing &amp; Security</h3>
+        <div class="chips">
+          <span class="chip">Django TestCase</span>
+          <span class="chip">Scenario-based testing</span>
+          <span class="chip">Role-based access control</span>
+          <span class="chip">Session authentication</span>
+        </div>
+      </div>
+      <div class="skill-group reveal-target">
+        <h3>Tools</h3>
+        <div class="chips">
+          <span class="chip">Git</span>
+          <span class="chip">GitHub</span>
+          <span class="chip">GitLab</span>
+        </div>
+      </div>
+      <div class="skill-group reveal-target">
+        <h3>Currently learning</h3>
+        <div class="chips">
+          <span class="chip chip-active">System Design</span>
+          <span class="chip chip-active">DSA</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROJECTS ============ -->
+<section class="section" id="projects">
+  <div class="section-inner">
+    <h2 class="section-title">Projects</h2>
+
+    <!-- CULINAAI -->
+    <article class="project" id="culinaai">
+      <div class="project-head">
+        <div>
+          <p class="project-eyebrow">MSc Dissertation &middot; Live &middot; Jun&ndash;Sep 2026</p>
+          <h3>CulinaAI</h3>
+          <p class="project-tagline">AI-Powered Recipe Generation &amp; Meal Personalisation Platform</p>
+          <div class="quick-facts">
+            <span class="qf">8-point validation engine</span>
+            <span class="qf">64 scenarios &middot; 100% pass</span>
+            <span class="qf">Live, deployed on Render</span>
+          </div>
+        </div>
+        <div class="project-tags">
+          <span class="tag">Django</span><span class="tag">PostgreSQL</span><span class="tag">JavaScript</span><span class="tag">Bootstrap</span><span class="tag">OpenAI API</span><span class="tag">GPT-4 Vision</span><span class="tag">AWS S3</span><span class="tag">GitHub Actions</span><span class="tag">Gunicorn</span><span class="tag">WhiteNoise</span><span class="tag">Render</span>
+        </div>
+      </div>
+
+      <div class="project-body">
+        <div class="project-showcase">
+          <div class="showcase-frame">
+            <img id="culinaaiImg" src="images/culinaai/01-generate-recipe.png" alt="CulinaAI screenshot">
+          </div>
+          <div class="showcase-dots" id="culinaaiDots">
+            <button class="dot active" data-target="0" aria-label="Screenshot 1"></button>
+            <button class="dot" data-target="1" aria-label="Screenshot 2"></button>
+            <button class="dot" data-target="2" aria-label="Screenshot 3"></button>
+            <button class="dot" data-target="3" aria-label="Screenshot 4"></button>
+          </div>
+        </div>
+
+        <div class="project-detail">
+          <div class="tabs" data-project="culinaai">
+            <button class="tab active" data-tab="overview">Overview</button>
+            <button class="tab" data-tab="contribution">Key Features</button>
+            <button class="tab" data-tab="challenge">Technical Challenge</button>
+            <button class="tab" data-tab="testing">Testing</button>
+          </div>
+
+          <div class="tab-panel active" data-panel="overview">
+            <p>CulinaAI is an AI-assisted recipe generation and meal personalisation system built as my MSc dissertation at the University of Leicester. It takes a user's available ingredients, dietary preferences, allergies, cuisine choice, and cooking time, and generates a personalised recipe through the OpenAI API &mdash; validated end-to-end before it ever reaches the user.</p>
+            <p>Every AI-generated recipe passes through an 8-point automated validation engine checking allergy safety, dietary compliance, structure, and equipment constraints before it's shown or saved. Beyond generation, the platform includes a Smart Pantry with expiry tracking, refrigerator-scan ingredient detection, recipe modification with side-by-side revalidation, and a real-time interactive AI cooking assistant.</p>
+          </div>
+          <div class="tab-panel" data-panel="contribution">
+            <ul>
+              <li>AI recipe generation across 7 personalisation parameters (ingredients, cuisine, diet, allergies, cooking time, servings, equipment)</li>
+              <li>8-point automated AI safety validation engine</li>
+              <li>Smart Pantry with expiry tracking</li>
+              <li>Refrigerator-scan ingredient detection (GPT-4 Vision)</li>
+              <li>Recipe modification with side-by-side revalidation</li>
+              <li>Real-time interactive AI cooking assistant</li>
+              <li>Persistent recipe images via AWS S3</li>
+              <li>Automated CI pipeline running on every push</li>
+            </ul>
+          </div>
+          <div class="tab-panel" data-panel="challenge">
+            <p>The hard part was never calling the OpenAI API &mdash; it was deciding what happens when the model is wrong. A direct "prompt and display" design leaves the whole app dependent on a language model's reliability for things like allergy safety, where fluent-sounding output can still be dangerously incorrect.</p>
+            <p>The validation engine treats safety failures as hard failures rather than score deductions: a single critical fail caps the score and can trigger controlled regeneration, with every attempt persisted as evidence rather than silently discarded.</p>
+          </div>
+          <div class="tab-panel" data-panel="testing">
+            <p>The system met all 29 functional and 10 non-functional requirements defined for the project, verified through 64 structured test scenarios across 6 categories &mdash; functional, integration, AI-validation, pantry/shopping, modification, and interface testing &mdash; a 100% pass rate.</p>
+            <p>Across every one of those validation scenarios, the 8-point engine caught 100% of constraint violations before storage &mdash; cutting unsafe AI output to zero rather than just flagging it after the fact.</p>
+          </div>
+
+          <p class="skills-demo-line"><span>Skills demonstrated:</span> Full-stack development &middot; REST API integration &middot; Automated testing (Django TestCase) &middot; CI/CD pipelines &middot; Cloud deployment &middot; AWS (S3, IAM least-privilege access) &middot; Database design (PostgreSQL) &middot; Production debugging</p>
+
+          <div class="project-links">
+            <a href="https://culinaai.onrender.com" class="link-btn link-btn-primary" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M10 14 21 3M21 3h-6M21 3v6"/><path d="M19 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h6"/></svg>
+              View Live Demo
+            </a>
+            <a href="https://github.com/SumitYadav2003/culinaai" class="link-btn" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 .5C5.73.5.98 5.24.98 11.52c0 5.02 3.26 9.28 7.78 10.78.57.1.78-.25.78-.55 0-.27-.01-1.16-.02-2.1-3.17.69-3.84-1.35-3.84-1.35-.52-1.31-1.26-1.66-1.26-1.66-1.03-.7.08-.69.08-.69 1.14.08 1.74 1.17 1.74 1.17 1.01 1.73 2.65 1.23 3.3.94.1-.74.4-1.23.72-1.51-2.53-.29-5.19-1.27-5.19-5.63 0-1.24.44-2.26 1.17-3.06-.12-.29-.51-1.45.11-3.02 0 0 .96-.31 3.15 1.17a10.9 10.9 0 0 1 5.74 0c2.19-1.48 3.15-1.17 3.15-1.17.62 1.57.23 2.73.11 3.02.73.8 1.17 1.82 1.17 3.06 0 4.37-2.66 5.34-5.2 5.62.41.36.77 1.06.77 2.15 0 1.55-.01 2.8-.01 3.18 0 .3.2.66.79.55 4.52-1.51 7.77-5.76 7.77-10.78C23.02 5.24 18.27.5 12 .5Z"/></svg>
+              View Code
+            </a>
+          </div>
+          <p class="demo-cold-start">Hosted on a free tier &mdash; first load may take 30&ndash;60 seconds if idle.</p>
+
+          <div class="interesting-box">
+            <p class="interesting-label">Worth knowing</p>
+            <p>A critical allergy or diet failure caps the score outright &mdash; even if every other check passes perfectly, the recipe still gets rejected or sent back for regeneration. A high score is never allowed to hide a safety problem.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- LIVE VALIDATION DEMO -->
+      <div class="demo">
+        <div class="demo-head">
+          <h4>Try the validation logic</h4>
+          <p>A simplified, in-browser recreation of the real 8-gate engine &mdash; pick constraints, generate a mock recipe, and see how it's scored. This does not call the live app or the OpenAI API; it mirrors the scoring rules described above.</p>
+        </div>
+        <div class="demo-body">
+          <div class="demo-controls">
+            <label class="demo-field">
+              <span>Diet</span>
+              <select id="demoDiet">
+                <option value="none">No preference</option>
+                <option value="vegan">Vegan</option>
+                <option value="vegetarian">Vegetarian</option>
+              </select>
+            </label>
+            <label class="demo-field">
+              <span>Allergy</span>
+              <select id="demoAllergy">
+                <option value="none">None</option>
+                <option value="nut">Nut allergy</option>
+                <option value="dairy">Dairy allergy</option>
+              </select>
+            </label>
+            <label class="demo-field">
+              <span>Max cooking time</span>
+              <select id="demoTime">
+                <option value="60">60 min</option>
+                <option value="30">30 min</option>
+                <option value="15">15 min</option>
+              </select>
+            </label>
+            <button class="btn btn-primary" id="demoRun">Generate &amp; validate</button>
+          </div>
+
+          <div class="demo-output" id="demoOutput">
+            <p class="demo-placeholder">Pick your constraints and run the check.</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- CARVERSE -->
+    <article class="project" id="carverse">
+      <div class="project-head">
+        <div>
+          <p class="project-eyebrow">BSc Final Year Project &middot; 2024</p>
+          <h3>Carverse</h3>
+          <p class="project-tagline">A full-stack car dealership platform, built solo, no framework.</p>
+          <div class="quick-facts">
+            <span class="qf">125 pages, solo-built</span>
+            <span class="qf">40+ page vehicle showcase</span>
+            <span class="qf">Dual-role session auth</span>
+          </div>
+        </div>
+        <div class="project-tags">
+          <span class="tag">PHP</span><span class="tag">MySQL</span><span class="tag">PDO</span><span class="tag">JavaScript</span><span class="tag">HTML / CSS</span><span class="tag">XAMPP</span>
+        </div>
+      </div>
+
+      <div class="project-body">
+        <div class="project-showcase">
+          <div class="showcase-frame">
+            <img id="carverseImg" src="images/carverse/01-listing.png" alt="Carverse screenshot">
+          </div>
+          <div class="showcase-dots" id="carverseDots">
+            <button class="dot active" data-target="0" aria-label="Screenshot 1"></button>
+            <button class="dot" data-target="1" aria-label="Screenshot 2"></button>
+            <button class="dot" data-target="2" aria-label="Screenshot 3"></button>
+            <button class="dot" data-target="3" aria-label="Screenshot 4"></button>
+          </div>
+        </div>
+
+        <div class="project-detail">
+          <div class="tabs" data-project="carverse">
+            <button class="tab active" data-tab="overview">Overview</button>
+            <button class="tab" data-tab="contribution">Key Features</button>
+            <button class="tab" data-tab="challenge">Technical Challenge</button>
+            <button class="tab" data-tab="testing">Testing</button>
+          </div>
+
+          <div class="tab-panel active" data-panel="overview">
+            <p>Carverse is a full-stack car dealership website built as my BSc final year project &mdash; before Django, before any framework at all. It covers the full lifecycle of a dealership site: public car browsing and pricing pages, user registration and login, sales and service appointment booking, customer reviews, a contact form, and a separate admin panel for managing listings and accounts.</p>
+            <p>It was built entirely in plain PHP with PDO for database access, across a relational MySQL schema, with no framework underneath it &mdash; every route, page, and session check was written and kept consistent by hand.</p>
+          </div>
+          <div class="tab-panel" data-panel="contribution">
+            <ul>
+              <li>Dual-role session authentication, separating public-user login from the admin panel</li>
+              <li>Admin-manageable car catalogue &mdash; add/edit/delete listings with multi-image upload, backed by MySQL</li>
+              <li>40+ page vehicle showcase spanning multiple categories, with MySQL-backed search</li>
+              <li>Side-by-side vehicle comparison</li>
+              <li>Sales &amp; service appointment booking</li>
+              <li>Customer reviews and a contact-message system</li>
+            </ul>
+          </div>
+          <div class="tab-panel" data-panel="challenge">
+            <p>The real challenge was structural, not any one feature: keeping a large, multi-role site (public visitors, registered users, admins) consistent by hand, with no framework to enforce routing, sessions, or page structure. Every one of the 125 pages had to follow the same conventions on its own.</p>
+            <p>It's also the project that taught me why frameworks exist &mdash; the jump to Django for CulinaAI felt less like learning a tool and more like finally getting handed the scaffolding I'd been building manually here.</p>
+          </div>
+          <div class="tab-panel" data-panel="testing">
+            <p>Tested manually across each user flow &mdash; registration, booking, admin management &mdash; through a local XAMPP environment. This project predates the automated, scenario-based testing practice used on CulinaAI.</p>
+          </div>
+
+          <div class="project-links">
+            <a href="https://github.com/SumitYadav2003/carverse" class="link-btn" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 .5C5.73.5.98 5.24.98 11.52c0 5.02 3.26 9.28 7.78 10.78.57.1.78-.25.78-.55 0-.27-.01-1.16-.02-2.1-3.17.69-3.84-1.35-3.84-1.35-.52-1.31-1.26-1.66-1.26-1.66-1.03-.7.08-.69.08-.69 1.14.08 1.74 1.17 1.74 1.17 1.01 1.73 2.65 1.23 3.3.94.1-.74.4-1.23.72-1.51-2.53-.29-5.19-1.27-5.19-5.63 0-1.24.44-2.26 1.17-3.06-.12-.29-.51-1.45.11-3.02 0 0 .96-.31 3.15 1.17a10.9 10.9 0 0 1 5.74 0c2.19-1.48 3.15-1.17 3.15-1.17.62 1.57.23 2.73.11 3.02.73.8 1.17 1.82 1.17 3.06 0 4.37-2.66 5.34-5.2 5.62.41.36.77 1.06.77 2.15 0 1.55-.01 2.8-.01 3.18 0 .3.2.66.79.55 4.52-1.51 7.77-5.76 7.77-10.78C23.02 5.24 18.27.5 12 .5Z"/></svg>
+              View Code
+            </a>
+          </div>
+
+          <div class="interesting-box">
+            <p class="interesting-label">Worth knowing</p>
+            <p>No Laravel, no Symfony &mdash; just raw PHP and PDO across 125 hand-built pages. It's the project that makes me actually appreciate what a framework buys you, rather than just taking it for granted.</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ============ JOURNEY ============ -->
+<section class="section section-alt" id="journey">
+  <div class="section-inner">
+    <h2 class="section-title">Journey</h2>
+    <div class="timeline">
+      <div class="tl-item reveal-target">
+        <div class="tl-marker"></div>
+        <div class="tl-content">
+          <p class="tl-date">2021 &mdash; 2024</p>
+          <h4>BSc Computer Science</h4>
+          <p>PTVA's Mulund College of Commerce (Autonomous) &middot; CGPA 8.53.</p>
+          <ul class="tl-checks">
+            <li>Programming fundamentals &amp; object-oriented design</li>
+            <li>Database systems</li>
+            <li>Built Carverse, a 125-page car dealership site, solo, with no framework</li>
+          </ul>
+          <div class="tl-tags"><span class="tag">PHP</span><span class="tag">MySQL</span><span class="tag">PDO</span></div>
+        </div>
+      </div>
+      <div class="tl-item reveal-target">
+        <div class="tl-marker"></div>
+        <div class="tl-content">
+          <p class="tl-date">2025</p>
+          <h4>MSc Advanced Computer Science begins</h4>
+          <p>University of Leicester &mdash; shifted focus toward Python, Django, and AI-integrated web development.</p>
+          <div class="tl-tags"><span class="tag">Python</span><span class="tag">Django</span><span class="tag">PostgreSQL</span></div>
+        </div>
+      </div>
+      <div class="tl-item reveal-target">
+        <div class="tl-marker"></div>
+        <div class="tl-content">
+          <p class="tl-date">2026</p>
+          <h4>CulinaAI &mdash; MSc Dissertation</h4>
+          <p>Built an AI-assisted recipe platform centred on a custom validation engine for generative output, then deployed it to production.</p>
+          <ul class="tl-checks">
+            <li>8-point weighted AI validation engine</li>
+            <li>GPT-4 Vision fridge-scanner pipeline</li>
+            <li>Deployed live with a GitHub Actions CI/CD pipeline</li>
+          </ul>
+          <div class="tl-tags"><span class="tag">Django</span><span class="tag">PostgreSQL</span><span class="tag">OpenAI API</span><span class="tag">AWS S3</span></div>
+        </div>
+      </div>
+      <div class="tl-item reveal-target">
+        <div class="tl-marker tl-marker-active"></div>
+        <div class="tl-content">
+          <p class="tl-date">Now</p>
+          <h4>Looking for my first role</h4>
+          <p>Software or Data Engineer, open to relocating.</p>
+          <ul class="tl-checks">
+            <li>Deepening System Design, AWS, and DSA</li>
+            <li>Applying to Software / Data Engineer roles across the UK</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EDUCATION ============ -->
+<section class="section" id="education">
+  <div class="section-inner">
+    <h2 class="section-title">Education</h2>
+    <div class="edu-grid">
+      <div class="edu-card">
+        <p class="edu-date">2025 &mdash; Present</p>
+        <h3>MSc Advanced Computer Science</h3>
+        <p class="edu-place">University of Leicester</p>
+      </div>
+      <div class="edu-card">
+        <p class="edu-date">2021 &mdash; 2024</p>
+        <h3>BSc Computer Science</h3>
+        <p class="edu-place">PTVA's Mulund College of Commerce (Autonomous) &middot; CGPA 8.53</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="section contact-section" id="contact">
+  <div class="section-inner contact-inner">
+    <h2 class="section-title contact-title">Let's build something real.</h2>
+    <p class="contact-lead">Open to Software and Data Engineer roles &mdash; happy to relocate. The fastest way to reach me is email.</p>
+
+    <div class="contact-grid">
+      <button class="contact-card" id="copyEmailBtn">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+        <span class="contact-label">Email</span>
+        <span class="contact-value" id="emailValue">sumityadav8976502030@gmail.com</span>
+        <span class="copy-hint" id="copyHint">Click to copy</span>
+      </button>
+
+      <a class="contact-card" href="https://www.linkedin.com/in/yadavsumit2003/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45Z"/></svg>
+        <span class="contact-label">LinkedIn</span>
+        <span class="contact-value">/in/yadavsumit2003</span>
+      </a>
+
+      <a class="contact-card" href="https://github.com/SumitYadav2003" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 .5C5.73.5.98 5.24.98 11.52c0 5.02 3.26 9.28 7.78 10.78.57.1.78-.25.78-.55 0-.27-.01-1.16-.02-2.1-3.17.69-3.84-1.35-3.84-1.35-.52-1.31-1.26-1.66-1.26-1.66-1.03-.7.08-.69.08-.69 1.14.08 1.74 1.17 1.74 1.17 1.01 1.73 2.65 1.23 3.3.94.1-.74.4-1.23.72-1.51-2.53-.29-5.19-1.27-5.19-5.63 0-1.24.44-2.26 1.17-3.06-.12-.29-.51-1.45.11-3.02 0 0 .96-.31 3.15 1.17a10.9 10.9 0 0 1 5.74 0c2.19-1.48 3.15-1.17 3.15-1.17.62 1.57.23 2.73.11 3.02.73.8 1.17 1.82 1.17 3.06 0 4.37-2.66 5.34-5.2 5.62.41.36.77 1.06.77 2.15 0 1.55-.01 2.8-.01 3.18 0 .3.2.66.79.55 4.52-1.51 7.77-5.76 7.77-10.78C23.02 5.24 18.27.5 12 .5Z"/></svg>
+        <span class="contact-label">GitHub</span>
+        <span class="contact-value">/SumitYadav2003</span>
+      </a>
+
+      <a class="contact-card" id="resumeBtn" href="files/Sumit-Yadav-CV.pdf" download>
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+        <span class="contact-label">Resume</span>
+        <span class="contact-value">Download PDF</span>
+      </a>
+    </div>
+
+    <div class="contact-meta">
+      <span>Leicester, United Kingdom</span>
+      <span class="meta-dot">&middot;</span>
+      <span>MSc Advanced Computer Science, University of Leicester</span>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>Designed &amp; built by Sumit Yadav.</p>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
