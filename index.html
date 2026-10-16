@@ -51,7 +51,7 @@
       <div class="hero-stats" id="heroStats">
         <div class="stat-box">
           <span class="stat-num" data-count="2">0</span>
-          <span class="stat-label">Full-stack projects shipped</span>
+          <span class="stat-label">Full-stack projects built</span>
         </div>
         <div class="stat-box">
           <span class="stat-static">MSc</span>
@@ -152,7 +152,8 @@
         <h3>AI Integration</h3>
         <div class="chips">
           <span class="chip">OpenAI API</span>
-          <span class="chip">GPT-4 Vision</span>
+          <span class="chip">Vision models</span>
+          <span class="chip">Image generation</span>
         </div>
       </div>
       <div class="skill-group reveal-target">
@@ -203,30 +204,53 @@
     <article class="project" id="culinaai">
       <div class="project-head">
         <div>
-          <p class="project-eyebrow">MSc Dissertation &middot; Live &middot; Jun&ndash;Sep 2026</p>
+          <p class="project-eyebrow">MSc Dissertation, extended post-submission &middot; Live &middot; Jun 2026 &ndash; Present</p>
           <h3>CulinaAI</h3>
-          <p class="project-tagline">AI-Powered Recipe Generation &amp; Meal Personalisation Platform</p>
+          <p class="project-tagline">AI Recipe Generation, Meal Planning &amp; Nutrition Platform</p>
           <div class="quick-facts">
-            <span class="qf">8-point validation engine</span>
-            <span class="qf">64 scenarios &middot; 100% pass</span>
+            <span class="qf">10-point validation engine</span>
+            <span class="qf">376 automated tests</span>
             <span class="qf">Live, deployed on Render</span>
           </div>
         </div>
         <div class="project-tags">
-          <span class="tag">Django</span><span class="tag">PostgreSQL</span><span class="tag">JavaScript</span><span class="tag">Bootstrap</span><span class="tag">OpenAI API</span><span class="tag">GPT-4 Vision</span><span class="tag">AWS S3</span><span class="tag">GitHub Actions</span><span class="tag">Gunicorn</span><span class="tag">WhiteNoise</span><span class="tag">Render</span>
+          <span class="tag">Django</span><span class="tag">PostgreSQL</span><span class="tag">JavaScript</span><span class="tag">Bootstrap</span><span class="tag">OpenAI API</span><span class="tag">PWA</span><span class="tag">AWS S3</span><span class="tag">GitHub Actions</span><span class="tag">Brevo</span><span class="tag">Sentry</span><span class="tag">Render</span>
         </div>
       </div>
+
+      <div class="evolution-strip reveal-target">
+        <div class="evolution-col">
+          <p class="evolution-label">Dissertation &middot; graded Sep 2026</p>
+          <ul class="evolution-list">
+            <li>8-point validation engine</li>
+            <li>64 test scenarios, 100% pass</li>
+            <li>Recipe generation only</li>
+          </ul>
+        </div>
+        <div class="evolution-arrow" aria-hidden="true">&#8594;</div>
+        <div class="evolution-col evolution-col-now">
+          <p class="evolution-label evolution-label-now">Live today</p>
+          <ul class="evolution-list">
+            <li>10-point validation engine</li>
+            <li>376 automated tests</li>
+            <li>+ nutrition/cost/carbon, meal plan, PWA, demo account</li>
+          </ul>
+        </div>
+      </div>
+      <p class="evolution-caption">What got graded, versus what I kept building afterwards &mdash; on my own time, after submission.</p>
 
       <div class="project-body">
         <div class="project-showcase">
           <div class="showcase-frame">
-            <img id="culinaaiImg" src="images/culinaai/01-generate-recipe.png" alt="CulinaAI screenshot">
+            <img id="culinaaiImg" src="images/culinaai/01-home.png" alt="CulinaAI screenshot">
           </div>
           <div class="showcase-dots" id="culinaaiDots">
             <button class="dot active" data-target="0" aria-label="Screenshot 1"></button>
             <button class="dot" data-target="1" aria-label="Screenshot 2"></button>
             <button class="dot" data-target="2" aria-label="Screenshot 3"></button>
             <button class="dot" data-target="3" aria-label="Screenshot 4"></button>
+            <button class="dot" data-target="4" aria-label="Screenshot 5"></button>
+            <button class="dot" data-target="5" aria-label="Screenshot 6"></button>
           </div>
         </div>
 
@@ -239,31 +263,35 @@
           </div>
 
           <div class="tab-panel active" data-panel="overview">
-            <p>CulinaAI is an AI-assisted recipe generation and meal personalisation system built as my MSc dissertation at the University of Leicester. It takes a user's available ingredients, dietary preferences, allergies, cuisine choice, and cooking time, and generates a personalised recipe through the OpenAI API &mdash; validated end-to-end before it ever reaches the user.</p>
-            <p>Every AI-generated recipe passes through an 8-point automated validation engine checking allergy safety, dietary compliance, structure, and equipment constraints before it's shown or saved. Beyond generation, the platform includes a Smart Pantry with expiry tracking, refrigerator-scan ingredient detection, recipe modification with side-by-side revalidation, and a real-time interactive AI cooking assistant.</p>
+            <p>CulinaAI started as my MSc dissertation at the University of Leicester: an AI-assisted recipe generator that takes a user's ingredients, diet, allergies, cuisine and cooking time, and returns a personalised recipe through the OpenAI API &mdash; validated end-to-end before it reaches the user. Since submitting it, I've kept building it as a real product.</p>
+            <p>Every AI-generated recipe now passes a 10-point automated validation engine before it's shown or saved, and its nutrition, cost and carbon footprint are calculated from real UK food data &mdash; not estimated by the AI. It's also grown into a full meal-planning tool: a Smart Pantry with expiry tracking, a weekly meal plan with an auto-combined shopping list, a cooking mode with voice commands, and an installable, offline-capable PWA.</p>
           </div>
           <div class="tab-panel" data-panel="contribution">
             <ul>
-              <li>AI recipe generation across 7 personalisation parameters (ingredients, cuisine, diet, allergies, cooking time, servings, equipment)</li>
-              <li>8-point automated AI safety validation engine</li>
-              <li>Smart Pantry with expiry tracking</li>
-              <li>Refrigerator-scan ingredient detection (GPT-4 Vision)</li>
-              <li>Recipe modification with side-by-side revalidation</li>
-              <li>Real-time interactive AI cooking assistant</li>
-              <li>Persistent recipe images via AWS S3</li>
-              <li>Automated CI pipeline running on every push</li>
+              <li>AI recipe generation from ingredients, pantry contents, or a photo of your fridge, across diet, allergy, cuisine, time and equipment constraints</li>
+              <li>10-point automated validation engine, with up to 3 controlled regeneration attempts and a safe fallback recipe if every attempt fails</li>
+              <li>Nutrition, cost and carbon per serving from real UK data &mdash; CoFID 2021 (~2,750 foods), ONS and supermarket prices, Poore &amp; Nemecek (2018) carbon data, with UK traffic-light labelling</li>
+              <li>"One dish, three ways" &mdash; the same recipe made cheaper, healthier or greener through verified ingredient swaps</li>
+              <li>Weekly meal plan with an auto-combined shopping list that subtracts what's already in your pantry</li>
+              <li>Smart Pantry with expiry tracking, surfaced on the dashboard</li>
+              <li>Cooking mode with step timers, hands-free voice commands, and a live cooking assistant for recipe questions</li>
+              <li>Installable PWA &mdash; works offline, syncs any changes made offline once back online</li>
+              <li>Opt-in weekly email of what's expiring and next week's plan</li>
+              <li>No-signup demo account for anyone evaluating it, pre-loaded with sample data</li>
+              <li>Accounts with email confirmation, favourites, history, light/dark mode, and self-service data export/delete</li>
             </ul>
           </div>
           <div class="tab-panel" data-panel="challenge">
             <p>The hard part was never calling the OpenAI API &mdash; it was deciding what happens when the model is wrong. A direct "prompt and display" design leaves the whole app dependent on a language model's reliability for things like allergy safety, where fluent-sounding output can still be dangerously incorrect.</p>
             <p>The validation engine treats safety failures as hard failures rather than score deductions: a single critical fail caps the score and can trigger controlled regeneration, with every attempt persisted as evidence rather than silently discarded.</p>
+            <p>The second challenge came later: getting nutrition, cost and carbon numbers the AI never touches. That meant matching free-text ingredient lines like "2 tins chickpeas, drained" against roughly 2,750 UK food-composition records, plus separate price and carbon datasets &mdash; a data-matching problem, not a prompting one.</p>
           </div>
           <div class="tab-panel" data-panel="testing">
-            <p>The system met all 29 functional and 10 non-functional requirements defined for the project, verified through 64 structured test scenarios across 6 categories &mdash; functional, integration, AI-validation, pantry/shopping, modification, and interface testing &mdash; a 100% pass rate.</p>
-            <p>Across every one of those validation scenarios, the 8-point engine caught 100% of constraint violations before storage &mdash; cutting unsafe AI output to zero rather than just flagging it after the fact.</p>
+            <p>The dissertation version, graded in September 2026, met all 29 functional and 10 non-functional requirements defined for the project, verified through 64 structured test scenarios &mdash; a 100% pass rate. That version had 8 validation checks and no nutrition engine.</p>
+            <p>Everything since &mdash; the extra 2 checks, the nutrition/cost/carbon engine, meal planning, offline support, the demo account, and most of the test suite &mdash; was built afterwards, on my own time. The project is now covered by 376 automated Django tests, a 362-phrase voice-command test script, and a 30-case benchmark across 6 cuisines run through the live pipeline, all exercised on every push via GitHub Actions. The AI is always mocked out in tests, so CI never calls OpenAI.</p>
           </div>
 
-          <p class="skills-demo-line"><span>Skills demonstrated:</span> Full-stack development &middot; REST API integration &middot; Automated testing (Django TestCase) &middot; CI/CD pipelines &middot; Cloud deployment &middot; AWS (S3, IAM least-privilege access) &middot; Database design (PostgreSQL) &middot; Production debugging</p>
+          <p class="skills-demo-line"><span>Skills demonstrated:</span> Full-stack development &middot; REST API integration &middot; Automated testing (Django TestCase) &middot; CI/CD pipelines &middot; Cloud deployment &middot; AWS (S3, IAM least-privilege access) &middot; Database design (PostgreSQL) &middot; Data matching &amp; engineering &middot; PWA / offline-first design &middot; Production debugging &middot; Error monitoring (Sentry)</p>
 
           <div class="project-links">
             <a href="https://culinaai.onrender.com" class="link-btn link-btn-primary" target="_blank" rel="noopener">
@@ -275,11 +303,16 @@
               View Code
             </a>
           </div>
-          <p class="demo-cold-start">Hosted on a free tier &mdash; first load may take 30&ndash;60 seconds if idle.</p>
+          <p class="demo-cold-start">Hosted on a free tier &mdash; first load may take 30&ndash;60 seconds if idle. Click "Try the demo" once it's loaded &mdash; no signup needed, sample data included.</p>
 
           <div class="interesting-box">
             <p class="interesting-label">Worth knowing</p>
             <p>A critical allergy or diet failure caps the score outright &mdash; even if every other check passes perfectly, the recipe still gets rejected or sent back for regeneration. A high score is never allowed to hide a safety problem.</p>
+          </div>
+
+          <div class="interesting-box">
+            <p class="interesting-label">Worth knowing</p>
+            <p>I kept building this after the dissertation was submitted and graded &mdash; the nutrition engine, meal planning, offline support and most of the test suite are all post-submission work, done because I wanted to see it through to something I'd actually use.</p>
           </div>
         </div>
       </div>
@@ -288,7 +321,7 @@
       <div class="demo">
         <div class="demo-head">
           <h4>Try the validation logic</h4>
-          <p>A simplified, in-browser recreation of the real 8-gate engine &mdash; pick constraints, generate a mock recipe, and see how it's scored. This does not call the live app or the OpenAI API; it mirrors the scoring rules described above.</p>
+          <p>A simplified, in-browser illustration of a subset of the real validation rules &mdash; pick constraints, generate a mock recipe, and see how it's scored. The live engine runs 10 automated checks; this does not call the live app or the OpenAI API, and mirrors only part of the scoring logic described above.</p>
         </div>
         <div class="demo-body">
           <div class="demo-controls">

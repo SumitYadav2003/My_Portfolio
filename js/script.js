@@ -220,7 +220,7 @@ function setupCarousel(imgId, dotsId, folder, files) {
 }
 
 setupCarousel('culinaaiImg', 'culinaaiDots', 'culinaai', [
-  '01-generate-recipe.png', '02-ai-cooking-assistant.png', '03-dashboard.png', '04-saved-recipes.png'
+  '01-home.png', '02-recipe.png', '03-nutrition.png', '04-meal-plan.png', '05-shopping-list.png', '06-dashboard.png'
 ]);
 setupCarousel('carverseImg', 'carverseDots', 'carverse', [
   '01-listing.png', '02-about.png', '03-appointment.png', '04-review.png'
