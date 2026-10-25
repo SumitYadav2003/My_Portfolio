@@ -44,7 +44,7 @@
       <p class="hero-greeting">Hello, I'm</p>
       <h1 class="hero-name">Sumit <span class="accent">Yadav</span></h1>
       <p class="hero-role">Software Engineer &middot; Data Engineer</p>
-      <p class="hero-edu">MSc Advanced Computer Science <span class="hero-edu-status">(in progress)</span></p>
+      <p class="hero-edu">MSc Advanced Computer Science</p>
       <p class="hero-edu">University of Leicester</p>
       <p class="hero-loc">Leicester, UK &middot; Open to relocate</p>
 
@@ -55,7 +55,7 @@
         </div>
         <div class="stat-box">
           <span class="stat-static">MSc</span>
-          <span class="stat-label">Advanced CS &mdash; in progress</span>
+          <span class="stat-label">Advanced CS &mdash; graduate</span>
         </div>
       </div>
 
@@ -96,7 +96,7 @@
   <div class="section-inner about-grid">
     <div class="about-copy">
       <h2 class="section-title">About</h2>
-      <p>I'm an MSc Advanced Computer Science student at the University of Leicester, finishing up a dissertation that treats generative AI as a component to be controlled, not a black box to be trusted. That instinct runs through everything I build: generate with AI where it's useful, then wrap it in validation, ownership, and evidence so the software stays predictable.</p>
+      <p>I'm an MSc Advanced Computer Science graduate from the University of Leicester. My dissertation (CulinaAI) treats generative AI as a component to be controlled, not a black box to be trusted. That instinct runs through everything I build: generate with AI where it's useful, then wrap it in validation, ownership, and evidence so the software stays predictable.</p>
       <p>Before this, I built Carverse, a 40+ page car dealership platform, solo, in plain PHP with no framework, during my BSc. I've since deployed CulinaAI to production with a real CI/CD pipeline and AWS S3 storage, and built Carverse Check, a UK used-car checker running DVSA's full 2024 MOT dataset through a dbt/DuckDB pipeline with proper statistical methods, specifically to close a data engineering skills gap. I'm currently deepening system design and DSA fundamentals while I look for my first role as a Software or Data Engineer.</p>
       <p>Based in Leicester, UK &mdash; open to relocating anywhere the work is good.</p>
     </div>
@@ -217,7 +217,7 @@
     <article class="project" id="culinaai">
       <div class="project-head">
         <div>
-          <p class="project-eyebrow">MSc Dissertation, extended post-submission &middot; Live &middot; Jun 2026 &ndash; Present</p>
+          <p class="project-eyebrow">MSc Dissertation, extended post-submission &middot; Live &middot; May 2026 &ndash; Sep 2026</p>
           <h3>CulinaAI</h3>
           <p class="project-tagline">AI Recipe Generation, Meal Planning &amp; Nutrition Platform</p>
           <div class="quick-facts">
@@ -291,7 +291,7 @@
             <ul>
               <li>AI recipe generation from ingredients, pantry contents, or a photo of your fridge, across diet, allergy, cuisine, time and equipment constraints</li>
               <li>10-point automated validation engine, with up to 3 controlled regeneration attempts and a safe fallback recipe if every attempt fails</li>
-              <li>Nutrition, cost and carbon per serving from real UK data &mdash; CoFID 2021 (~2,750 foods), ONS and supermarket prices, Poore &amp; Nemecek (2018) carbon data, with UK traffic-light labelling</li>
+              <li>Nutrition, cost and carbon per serving from real UK data &mdash; CoFID 2021 (2,759 foods), ONS and supermarket prices, Poore &amp; Nemecek (2018) carbon data, with UK traffic-light labelling</li>
               <li>"One dish, three ways" &mdash; the same recipe made cheaper, healthier or greener through verified ingredient swaps</li>
               <li>Weekly meal plan with an auto-combined shopping list that subtracts what's already in your pantry</li>
               <li>Smart Pantry with expiry tracking, surfaced on the dashboard</li>
@@ -305,7 +305,7 @@
           <div class="tab-panel" data-panel="challenge">
             <p>The hard part was never calling the OpenAI API &mdash; it was deciding what happens when the model is wrong. A direct "prompt and display" design leaves the whole app dependent on a language model's reliability for things like allergy safety, where fluent-sounding output can still be dangerously incorrect.</p>
             <p>The validation engine treats safety failures as hard failures rather than score deductions: a single critical fail caps the score and can trigger controlled regeneration, with every attempt persisted as evidence rather than silently discarded.</p>
-            <p>The second challenge came later: getting nutrition, cost and carbon numbers the AI never touches. That meant matching free-text ingredient lines like "2 tins chickpeas, drained" against roughly 2,750 UK food-composition records, plus separate price and carbon datasets &mdash; a data-matching problem, not a prompting one.</p>
+            <p>The second challenge came later: getting nutrition, cost and carbon numbers the AI never touches. That meant matching free-text ingredient lines like "2 tins chickpeas, drained" against 2,759 UK food-composition records, plus separate price and carbon datasets &mdash; a data-matching problem, not a prompting one.</p>
           </div>
           <div class="tab-panel" data-panel="testing">
             <p>The dissertation version, graded in September 2026, met all 29 functional and 10 non-functional requirements defined for the project, verified through 64 structured test scenarios &mdash; a 100% pass rate. That version had 8 validation checks and no nutrition engine.</p>
@@ -384,7 +384,7 @@
     <article class="project" id="carverse-check">
       <div class="project-head">
         <div>
-          <p class="project-eyebrow">Self-directed data engineering project &middot; Live &middot; Oct 2026 &ndash; Present</p>
+          <p class="project-eyebrow">Self-directed data engineering project &middot; Live &middot; Sep 2026 &ndash; Oct 2026</p>
           <h3>Carverse Check</h3>
           <p class="project-tagline">A free UK used-car check, built on a real DVSA MOT data pipeline.</p>
           <div class="quick-facts">
@@ -445,7 +445,7 @@
             <p>The raw data needed real cleaning first: DVSA's files repeat their header mid-file, about 35% of rows are exact duplicates, and 829,687 tests have duplicates that disagree with each other &mdash; where they disagree, the value is treated as unknown rather than guessed, and the test is flagged. Getting any of this wrong wouldn't show up as a crash; it would show up as confidently wrong numbers. So every pipeline run re-checks its own totals against DVSA's own published failure-rate statistics, and a dbt test fails the build if they don't match within tolerance.</p>
           </div>
           <div class="tab-panel" data-panel="testing">
-            <p>Every push runs four GitHub Actions jobs: 100 Django unit tests against Postgres (the same database as the live site, plus a migration check and Django's production deployment check), a pipeline job that regenerates sample data with the same quirks as the real files and asserts that a second run skips everything already loaded, 17 Playwright browser tests including axe accessibility checks on 12 pages, and a Lighthouse CI run that fails below 95 for accessibility or 90 for best practices &mdash; the latest run scored 98&ndash;100 on every page tested. dbt adds 49 data tests and a unit test on top, including the DVSA reconciliation check.</p>
+            <p>Every push runs four GitHub Actions jobs: 103 Django unit tests against Postgres (the same database as the live site, plus a migration check and Django's production deployment check), a pipeline job that regenerates sample data with the same quirks as the real files and asserts that a second run skips everything already loaded, 17 Playwright browser tests including axe accessibility checks on 12 pages, and a Lighthouse CI run that fails below 95 for accessibility or 90 for best practices &mdash; the latest run scored 98&ndash;100 on every page tested. dbt adds 49 data tests and a unit test on top, including the DVSA reconciliation check.</p>
             <p>A few of these checks caught real problems before they shipped: a textbook setting for the funnel-plot method halved the measured spread between models in a simulation where the true spread was known; axe caught small grey text below the WCAG contrast minimum and tables that keyboard users couldn't scroll on phones, both now fixed and tested in light and dark themes; and a DuckDB connection left open by dbt silently blocked the publish step until the flow was changed to close it explicitly.</p>
           </div>
 
@@ -600,7 +600,7 @@
       <div class="tl-item reveal-target">
         <div class="tl-marker"></div>
         <div class="tl-content">
-          <p class="tl-date">2026 (Oct)</p>
+          <p class="tl-date">2026 (Sep&ndash;Oct)</p>
           <h4>Carverse Check &mdash; self-directed data engineering project</h4>
           <p>Built a UK used-car checker on DVSA's full 2024 MOT dataset, deliberately to close a Data Engineer skills gap that an application project like CulinaAI doesn't cover.</p>
           <ul class="tl-checks">
@@ -633,7 +633,7 @@
     <h2 class="section-title">Education</h2>
     <div class="edu-grid">
       <div class="edu-card">
-        <p class="edu-date">2025 &mdash; Present</p>
+        <p class="edu-date">Sep 2025 &mdash; Sep 2026</p>
         <h3>MSc Advanced Computer Science</h3>
         <p class="edu-place">University of Leicester</p>
       </div>
