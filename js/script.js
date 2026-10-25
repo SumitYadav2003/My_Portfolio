@@ -225,6 +225,9 @@ setupCarousel('culinaaiImg', 'culinaaiDots', 'culinaai', [
 setupCarousel('carverseImg', 'carverseDots', 'carverse', [
   '01-listing.png', '02-about.png', '03-appointment.png', '04-review.png'
 ]);
+setupCarousel('carverseCheckImg', 'carverseCheckDots', 'carverse-check', [
+  '01-home.png', '02-report.png', '03-explore.png'
+]);
 
 // ============================================
 // LIVE VALIDATION DEMO (CulinaAI)

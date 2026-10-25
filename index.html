@@ -50,7 +50,7 @@
 
       <div class="hero-stats" id="heroStats">
         <div class="stat-box">
-          <span class="stat-num" data-count="2">0</span>
+          <span class="stat-num" data-count="3">0</span>
           <span class="stat-label">Full-stack projects built</span>
         </div>
         <div class="stat-box">
@@ -97,7 +97,7 @@
     <div class="about-copy">
       <h2 class="section-title">About</h2>
       <p>I'm an MSc Advanced Computer Science student at the University of Leicester, finishing up a dissertation that treats generative AI as a component to be controlled, not a black box to be trusted. That instinct runs through everything I build: generate with AI where it's useful, then wrap it in validation, ownership, and evidence so the software stays predictable.</p>
-      <p>Before this, I built Carverse, a 40+ page car dealership platform, solo, in plain PHP with no framework, during my BSc. I've since deployed CulinaAI to production with a real CI/CD pipeline and AWS S3 storage, and I'm currently deepening system design and DSA fundamentals while I look for my first role as a Software or Data Engineer.</p>
+      <p>Before this, I built Carverse, a 40+ page car dealership platform, solo, in plain PHP with no framework, during my BSc. I've since deployed CulinaAI to production with a real CI/CD pipeline and AWS S3 storage, and built Carverse Check, a UK used-car checker running DVSA's full 2024 MOT dataset through a dbt/DuckDB pipeline with proper statistical methods, specifically to close a data engineering skills gap. I'm currently deepening system design and DSA fundamentals while I look for my first role as a Software or Data Engineer.</p>
       <p>Based in Leicester, UK &mdash; open to relocating anywhere the work is good.</p>
     </div>
 
@@ -114,7 +114,7 @@
     <div class="highlights-box reveal-target">
       <h3 class="highlights-title">Highlights</h3>
       <div class="highlights-grid">
-        <span class="hl">Two full-stack projects, solo-built end to end</span>
+        <span class="hl">Three full-stack &amp; data projects, solo-built end to end</span>
         <span class="hl">Custom AI validation &amp; safety logic, not just API calls</span>
         <span class="hl">Deployed to production with a real CI/CD pipeline</span>
         <span class="hl">Comfortable across the full stack</span>
@@ -149,6 +149,17 @@
         </div>
       </div>
       <div class="skill-group reveal-target">
+        <h3>Data Engineering</h3>
+        <div class="chips">
+          <span class="chip">DuckDB</span>
+          <span class="chip">dbt</span>
+          <span class="chip">Prefect</span>
+          <span class="chip">ETL pipelines</span>
+          <span class="chip">Dimensional modelling</span>
+          <span class="chip">Statistical modelling</span>
+        </div>
+      </div>
+      <div class="skill-group reveal-target">
         <h3>AI Integration</h3>
         <div class="chips">
           <span class="chip">OpenAI API</span>
@@ -172,6 +183,8 @@
         <div class="chips">
           <span class="chip">Django TestCase</span>
           <span class="chip">Scenario-based testing</span>
+          <span class="chip">Playwright</span>
+          <span class="chip">Accessibility testing (axe)</span>
           <span class="chip">Role-based access control</span>
           <span class="chip">Session authentication</span>
         </div>
@@ -367,6 +380,102 @@
       </div>
     </article>
 
+    <!-- CARVERSE CHECK -->
+    <article class="project" id="carverse-check">
+      <div class="project-head">
+        <div>
+          <p class="project-eyebrow">Self-directed data engineering project &middot; Live &middot; Oct 2026 &ndash; Present</p>
+          <h3>Carverse Check</h3>
+          <p class="project-tagline">A free UK used-car check, built on a real DVSA MOT data pipeline.</p>
+          <div class="quick-facts">
+            <span class="qf">42.6M DVSA MOT tests processed</span>
+            <span class="qf">dbt + DuckDB pipeline, star schema</span>
+            <span class="qf">Wilson/Bayes stats, not raw league tables</span>
+          </div>
+        </div>
+        <div class="project-tags">
+          <span class="tag">Python</span><span class="tag">Django</span><span class="tag">DuckDB</span><span class="tag">dbt</span><span class="tag">Prefect</span><span class="tag">PostgreSQL</span><span class="tag">Playwright</span><span class="tag">GitHub Actions</span><span class="tag">Render</span>
+        </div>
+      </div>
+
+      <figure class="project-video reveal-target">
+        <video controls playsinline preload="metadata" poster="images/carverse-check/carverse-check-poster.jpg" aria-label="40-second Carverse Check walkthrough">
+          <source src="videos/carverse-check.mp4" type="video/mp4">
+          Your browser can't play this video. <a href="videos/carverse-check.mp4">Download it</a> instead.
+        </video>
+        <figcaption>A number plate becomes a full MOT history check &mdash; dangerous defects and mileage gaps get flagged, the car is measured against every other car of the same make, model and age using statistics that don't let a small sample mislead, and the 42.6 million DVSA records behind it are reconciled against DVSA's own published figures before anything is published.</figcaption>
+      </figure>
+
+      <div class="project-body">
+        <div class="project-showcase">
+          <div class="showcase-frame">
+            <img id="carverseCheckImg" src="images/carverse-check/01-home.png" alt="Carverse Check screenshot">
+          </div>
+          <div class="showcase-dots" id="carverseCheckDots">
+            <button class="dot active" data-target="0" aria-label="Screenshot 1"></button>
+            <button class="dot" data-target="1" aria-label="Screenshot 2"></button>
+            <button class="dot" data-target="2" aria-label="Screenshot 3"></button>
+          </div>
+        </div>
+
+        <div class="project-detail">
+          <div class="tabs" data-project="carverse-check">
+            <button class="tab active" data-tab="overview">Overview</button>
+            <button class="tab" data-tab="contribution">Key Features</button>
+            <button class="tab" data-tab="challenge">Technical Challenge</button>
+            <button class="tab" data-tab="testing">Testing</button>
+          </div>
+
+          <div class="tab-panel active" data-panel="overview">
+            <p>Carverse Check is a free used-car check for UK buyers: type in a number plate and it reads the car's official MOT history from DVSA, flags what doesn't add up &mdash; mileage that's gone down, dangerous defects, the same advisory at more than one MOT, gaps of 14+ months with no MOT &mdash; and compares the car against every other car of the same make, model and year of first use, using statistics designed not to let a small sample mislead.</p>
+            <p>Behind the site is a real data pipeline. It processes DVSA's full anonymised 2024 MOT dataset for Great Britain &mdash; 42.6 million tests &mdash; through DuckDB and dbt into a star schema, checks its own totals against DVSA's own published statistics on every build, and only publishes the 17,460 make/model/year summaries once every test passes. It's a deliberately separate project from Carverse, my BSc car-dealership site, built afterwards and on my own time to close a specific gap: ETL, orchestration, dimensional modelling and statistical methods that an application project like CulinaAI doesn't touch.</p>
+          </div>
+          <div class="tab-panel" data-panel="contribution">
+            <ul>
+              <li>Full MOT history lookup via the DVSA MOT history API, with four automated checks &mdash; dropped mileage, dangerous defects, repeated advisories, 14+ month MOT gaps &mdash; every finding links back to the test it came from</li>
+              <li>Comparison against similar cars: how often the same make/model/year failed its first MOT, placed on a scale against all cars of that age, with a Wilson score interval, an empirical Bayes estimate for small samples, and the full Spiegelhalter funnel plot one click away</li>
+              <li>Mileage comparison against similar cars' average miles per year</li>
+              <li>A printable "questions to ask the seller" checklist, built from the car's own findings and its model's known weak spots</li>
+              <li>Explore section for browsing the statistics without a plate: search, rankings by year of first use, and a page for every model</li>
+              <li>Pipeline: ingest (DuckDB, SHA-256 file fingerprinting, skips files already loaded) &rarr; dbt (staging/intermediate/marts, star schema &mdash; fct_mot_tests at 42,598,624 rows, fct_test_defects at 91,829,954 rows) &rarr; publish (one transaction, never a half-loaded site) &rarr; Prefect orchestration with retries and an optional monthly schedule</li>
+            </ul>
+          </div>
+          <div class="tab-panel" data-panel="challenge">
+            <p>The hard part wasn't fetching MOT data &mdash; it was making the comparison statistics trustworthy. A model with only 40 tests can show a failure rate ten points off its true value by chance alone, which is why raw league tables mislead. Every rate gets a Wilson score interval; small groups get an empirical Bayes estimate pulled towards the age-wide rate, strongly when they have few tests; and the funnel plots follow Spiegelhalter's method for comparing hospitals, only calling a model better or worse than its peers when the whole range of its adjusted estimate sits on one side of the peer rate and the gap is at least one percentage point.</p>
+            <p>The raw data needed real cleaning first: DVSA's files repeat their header mid-file, about 35% of rows are exact duplicates, and 829,687 tests have duplicates that disagree with each other &mdash; where they disagree, the value is treated as unknown rather than guessed, and the test is flagged. Getting any of this wrong wouldn't show up as a crash; it would show up as confidently wrong numbers. So every pipeline run re-checks its own totals against DVSA's own published failure-rate statistics, and a dbt test fails the build if they don't match within tolerance.</p>
+          </div>
+          <div class="tab-panel" data-panel="testing">
+            <p>Every push runs four GitHub Actions jobs: 100 Django unit tests against Postgres (the same database as the live site, plus a migration check and Django's production deployment check), a pipeline job that regenerates sample data with the same quirks as the real files and asserts that a second run skips everything already loaded, 17 Playwright browser tests including axe accessibility checks on 12 pages, and a Lighthouse CI run that fails below 95 for accessibility or 90 for best practices &mdash; the latest run scored 98&ndash;100 on every page tested. dbt adds 49 data tests and a unit test on top, including the DVSA reconciliation check.</p>
+            <p>A few of these checks caught real problems before they shipped: a textbook setting for the funnel-plot method halved the measured spread between models in a simulation where the true spread was known; axe caught small grey text below the WCAG contrast minimum and tables that keyboard users couldn't scroll on phones, both now fixed and tested in light and dark themes; and a DuckDB connection left open by dbt silently blocked the publish step until the flow was changed to close it explicitly.</p>
+          </div>
+
+          <p class="skills-demo-line"><span>Skills demonstrated:</span> Data engineering (ETL, orchestration) &middot; dbt &amp; dimensional modelling &middot; DuckDB &middot; Prefect &middot; Statistical methods (Wilson intervals, empirical Bayes, funnel plots) &middot; Django &middot; PostgreSQL &middot; Automated testing (unit, data, browser, accessibility) &middot; CI/CD &middot; Cloud deployment</p>
+
+          <div class="project-links">
+            <a href="https://carverse-check.onrender.com" class="link-btn link-btn-primary" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M10 14 21 3M21 3h-6M21 3v6"/><path d="M19 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h6"/></svg>
+              View Live Demo
+            </a>
+            <a href="https://github.com/SumitYadav2003/carverse-check" class="link-btn" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 .5C5.73.5.98 5.24.98 11.52c0 5.02 3.26 9.28 7.78 10.78.57.1.78-.25.78-.55 0-.27-.01-1.16-.02-2.1-3.17.69-3.84-1.35-3.84-1.35-.52-1.31-1.26-1.66-1.26-1.66-1.03-.7.08-.69.08-.69 1.14.08 1.74 1.17 1.74 1.17 1.01 1.73 2.65 1.23 3.3.94.1-.74.4-1.23.72-1.51-2.53-.29-5.19-1.27-5.19-5.63 0-1.24.44-2.26 1.17-3.06-.12-.29-.51-1.45.11-3.02 0 0 .96-.31 3.15 1.17a10.9 10.9 0 0 1 5.74 0c2.19-1.48 3.15-1.17 3.15-1.17.62 1.57.23 2.73.11 3.02.73.8 1.17 1.82 1.17 3.06 0 4.37-2.66 5.34-5.2 5.62.41.36.77 1.06.77 2.15 0 1.55-.01 2.8-.01 3.18 0 .3.2.66.79.55 4.52-1.51 7.77-5.76 7.77-10.78C23.02 5.24 18.27.5 12 .5Z"/></svg>
+              View Code
+            </a>
+          </div>
+          <p class="demo-cold-start">Hosted on a free tier &mdash; first load may take 30&ndash;60 seconds if idle. Try the demo plate <strong>SAMPLE3</strong> &mdash; no signup needed, no DVSA API quota used.</p>
+
+          <div class="interesting-box">
+            <p class="interesting-label">Worth knowing</p>
+            <p>Every pipeline run re-checks its own totals against DVSA's own published statistics before anything is published. For cars and light vans, April&ndash;December 2024, it matched DVSA's initial failure rate to within 0.01 percentage points &mdash; 28.18% against DVSA's own 28.17%.</p>
+          </div>
+
+          <div class="interesting-box">
+            <p class="interesting-label">Worth knowing</p>
+            <p>I built this deliberately to close a Data Engineer skills gap &mdash; CulinaAI is an application project; this one is a pipeline, kept small on purpose: ingest, transform, test, publish, orchestrate, and the statistics to make a fair comparison trustworthy.</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
     <!-- CARVERSE -->
     <article class="project" id="carverse">
       <div class="project-head">
@@ -486,6 +595,20 @@
             <li>Deployed live with a GitHub Actions CI/CD pipeline</li>
           </ul>
           <div class="tl-tags"><span class="tag">Django</span><span class="tag">PostgreSQL</span><span class="tag">OpenAI API</span><span class="tag">AWS S3</span></div>
+        </div>
+      </div>
+      <div class="tl-item reveal-target">
+        <div class="tl-marker"></div>
+        <div class="tl-content">
+          <p class="tl-date">2026 (Oct)</p>
+          <h4>Carverse Check &mdash; self-directed data engineering project</h4>
+          <p>Built a UK used-car checker on DVSA's full 2024 MOT dataset, deliberately to close a Data Engineer skills gap that an application project like CulinaAI doesn't cover.</p>
+          <ul class="tl-checks">
+            <li>dbt + DuckDB pipeline over 42.6 million MOT tests, reconciled against DVSA's own published statistics</li>
+            <li>Wilson score intervals, empirical Bayes and Spiegelhalter funnel plots for fair model comparisons</li>
+            <li>Prefect orchestration, 100% CI-gated: unit, data, browser and accessibility tests</li>
+          </ul>
+          <div class="tl-tags"><span class="tag">DuckDB</span><span class="tag">dbt</span><span class="tag">Prefect</span><span class="tag">Django</span></div>
         </div>
       </div>
       <div class="tl-item reveal-target">
